@@ -1,0 +1,127 @@
+// LandingPage.module.scss
+
+
+
+.landingPage {
+  text-align: center;
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+
+  h1 {
+    color: #4a5568;
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+
+  p {
+    color: #6b7280;
+    margin-bottom: 20px;
+  }
+
+  h2,
+  h3 {
+    color: #374151;
+    margin-bottom: 10px;
+  }
+
+  form {
+    margin-bottom: 40px;
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      color: #374151;
+    }
+
+    input {
+      width: calc(100% - 20px);
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #d1d5db;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: #3b82f6;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: #2563eb;
+      }
+    }
+  }
+
+  .createGroup {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .welcomeCard,
+  .actionCards {
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    width: 100%;
+  }
+
+  .actionCards {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    // Media Query for larger screens
+    @media (min-width: 600px) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  .joinCard,
+  .createCard {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    flex: 1;
+    flex-basis: calc(50% - 20px);
+  }
+
+  .createButton {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    border: none;
+    border-radius: 12px;
+    font-size: 48px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 60px; // Adjust as per your design
+    height: 60px; // Adjust as per your design
+
+    &:hover {
+      background-color: #45a049;
+    }
+  }
+
+  .diceIcon {
+    font-size: 48px;
+  }
+
+}
