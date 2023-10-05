@@ -1,0 +1,164 @@
+$scrollbar-width: 1rem;
+$scrollbar-track-color: hsla(240, 11%, 91%, 0.1);
+$scrollbar-thumb-color: #0b93f6;
+$background-color: rgba(255, 255, 255, 0.849);
+$background-color-darker: rgb(202, 202, 202);
+$background-color-blue: #0b93f6;
+$message-sent-background: #0b93f6;
+$message-recieved-background: #00477a;
+$background-color-light: #e5e5ea;
+$background-color-button: #e5e5ea;
+$background-color-button-dark: #ffffff;
+$font-size-large: 1.5rem;
+$white-color: white;
+$black-color: black;
+
+.chatter {
+    position: relative;
+
+
+    .header {
+        font-size: 1.5em;
+        font-weight: bold;
+        color: $message-sent-background;
+        border-bottom: $message-sent-background 3px solid;
+    }
+
+    .messagesContainer {
+        position: relative;
+        max-height: 500px; // or whatever max height you desire for your chat area
+        overflow-y: auto;
+    }
+
+    .messages {
+        height: 30vh;
+        margin: 1.5em 0 3em;
+        overflow-y: scroll;
+        display: flex;
+        flex-direction: column;
+
+        &::-webkit-scrollbar {
+            width: $scrollbar-width;
+        }
+    
+        &::-webkit-scrollbar-track {
+            background: $scrollbar-track-color;
+        }
+    
+        &::-webkit-scrollbar-thumb {
+            background: $scrollbar-thumb-color;
+            border-radius: .5rem;
+
+        }
+    
+    }
+
+    .scrollToBottom {
+        position: absolute;
+        bottom: 45px;
+        right: $scrollbar-width;
+        border-radius: 2em;
+        cursor: pointer;
+        background-color: #eee;
+        padding: 10px;
+        text-align: center;
+        border-top: 1px solid #ccc;
+    }
+
+
+    form {
+        height: 2em;
+        position: absolute;
+        bottom: 0;
+        padding-right: 20px;
+        width: 100%;
+        display: flex;
+        font-size: $font-size-large;
+    }
+
+    input {
+        line-height: 1.5;
+        border-radius: .75em;  
+        width: 100%;
+        font-size: $font-size-large;
+        background: $background-color-darker;
+        color: $white-color;
+        outline: none;
+        border: none;
+        padding: .5em 1em;
+    }
+
+    button {
+        background-color: transparent; /* No background */
+        border: none; /* No border */
+        line-height: 1.5em;
+        font-size: 1.5em; /* Adjust the size of the arrow */
+        color: $white-color; /* Color of the arrow */
+        padding: 0;
+        text-align: center;
+        text-decoration: none;
+        display: inline-flex; /* Use flexbox for centering */
+        align-items: center; /* Center vertically */
+        justify-content: center; /* Center horizontally */
+        cursor: pointer;
+        width: 50px; /* Or whatever width you desire */
+        height: 50px; /* Or whatever height you desire */
+    
+        &:disabled {
+            cursor: not-allowed;
+        }
+    }
+
+    ul, li {
+        text-align: left;
+        list-style: none;
+    }
+
+    section {
+        max-width: 500px;
+        margin-bottom: 12px;
+        line-height: 24px;
+        padding: 10px 20px;
+        border-radius: 25px;
+        position: relative;
+        color: $white-color;
+        text-align: center;
+    }
+
+    .message {
+        display: flex;
+        align-items: start;
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+        section {
+            color: $white-color;
+            background: $message-sent-background;
+            align-self: flex-end;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+    }
+
+    .sent {
+        flex-direction: row-reverse;
+
+
+    }
+
+    .received section {
+        background: $message-recieved-background;
+        align-items: flex-start;
+
+    }
+
+    img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin: 2px 5px;
+    }
+}

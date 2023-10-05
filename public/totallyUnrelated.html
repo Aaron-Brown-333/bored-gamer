@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>That's why i'm called the count</title>
+
+    <script>
+        var OUT = 0;
+        var IN = 1;
+
+        // returns number of words in str
+        function countWords(str) {
+            var state = OUT;
+            var wc = 0; // word count
+            var i = 0;
+
+            // Scan all characters one
+            // by one
+            while (i < str.length) {
+
+                // If next character is a separator,
+                // set the state as OUT
+                if (str[i] == ' ' || str[i] == '\n' ||
+                    str[i] == '\t')
+                    state = OUT;
+
+
+                // If next character is not a word
+                // separator and state is OUT, then
+                // set the state as IN and increment
+                // word count
+                else if (state == OUT) {
+                    state = IN;
+                    ++wc;
+                }
+
+                // Move to next character
+                ++i;
+            }
+
+            return wc;
+        }
+
+        function calcWordCount() {
+            let wordCountDiv = document.querySelector('#wordCount');
+            let wordsEntry = document.querySelector('#theWords');
+            wordCountDiv.innerHTML = countWords(wordsEntry.value);
+        }
+
+        var intervalID = setInterval(calcWordCount, [500]);
+    </script>
+
+    <style media="screen">
+        body {
+            background: #ECEFF1;
+            color: rgba(0, 0, 0, 0.87);
+            font-family: Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .inputSection {
+            background: white;
+            width: 80%;
+            margin: 10px auto 0;
+            padding: 16px 24px 16px;
+            border-radius: 3px;
+        }
+
+        .inputSection h3 {
+            color: #888;
+            font-weight: normal;
+            font-size: 16px;
+            margin: 16px 0 12px;
+        }
+
+        .inputSection h2 {
+            color: #ffa100;
+            font-weight: bold;
+            font-size: 16px;
+            margin: 0 0 8px;
+        }
+
+        .inputSection h1 {
+            font-size: 22px;
+            font-weight: 300;
+            color: rgba(0, 0, 0, 0.6);
+            margin: 0 0 16px;
+        }
+
+        .inputSection p {
+            line-height: 140%;
+            margin: 16px 0 24px;
+            font-size: 14px;
+        }
+
+        .inputSection a {
+            display: block;
+            text-align: center;
+            background: #039be5;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: white;
+            padding: 16px;
+            border-radius: 4px;
+        }
+
+        .inputSection,
+        .inputSection a {
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        }
+
+        #load {
+            color: rgba(0, 0, 0, 0.4);
+            text-align: center;
+            font-size: 13px;
+        }
+
+        textarea {
+            width: 100%;
+        }
+
+        @media (max-width: 600px) {
+
+            body,
+            .inputSection {
+                margin-top: 0;
+                background: white;
+                box-shadow: none;
+            }
+
+            body {
+                border-top: 16px solid #ffa100;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="inputSection">
+        <h2>Ideas</h2>
+        <span style="display: flex;">
+            <textarea style="height: 500px"></textarea><a
+                href="https://www.youtube.com/watch?v=B-Wd-Q3F8KM&ab_channel=RobinWay" target="_blank"
+                style="background-color: white;">
+                <img style="width: 150px; height: 210px" src="/count.png" />
+            </a>
+        </span>
+    </div>
+
+    <div class="inputSection">
+        <h2>White Card: words words words</h2>
+        <div id="wordCount"></div>
+        <textarea style="height: 500px" id="theWords" onkeypress="calcWordCount();"></textarea>
+    </div>
+</body>
+
+</html>

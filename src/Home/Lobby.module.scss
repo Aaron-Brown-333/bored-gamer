@@ -1,0 +1,69 @@
+@import "../Constants.scss";
+
+.lobby {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 50px); // Adjusting for the navbar height
+}
+
+.qrCodeDialog {
+    z-index: 11;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 1em;
+    border: black 0.5em solid;
+    padding: 10px;
+
+    h2 {
+        margin: 0 0 0.5em;
+    }
+
+    button {
+        border-radius: 1em;
+        font-size: 1.25em;
+        background-color: black;
+        color: white;
+    }   
+}
+
+.header {
+    flex-shrink: 0;
+    background-color: $primary;
+    background: $third-color;
+    color: $text-secondary;
+    padding: 10px;
+    text-align: center;
+}
+
+.sidebar,
+.mainContent {
+    flex-grow: 1;
+}
+
+.sidebar {
+    overflow-y: auto;
+    background-color: $background-secondary;
+    padding: 10px;
+}
+
+.mainContent {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 10px;
+    background-color: $background-primary;
+    color: $text-primary;
+}
+
+// Media query for larger screens
+@media (min-width: 768px) {
+    .lobby {
+        flex-direction: column; // Ensure it's column to keep header and footer at top and bottom
+    }
+
+    .content {
+        display: flex;
+        flex-direction: row;
+        flex-grow: 1;
+    }
+}

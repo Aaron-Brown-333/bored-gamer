@@ -1,0 +1,31 @@
+// Color Palette
+// Color Palette
+$white-smoke: hsla(0, 0%, 96%, 1);
+$platinum: hsla(0, 0%, 90%, 1);
+$ash-gray: hsla(0, 0%, 46%, 1);
+$onyx: hsla(0, 0%, 13%, 1);
+$accent-color: #0b93f6;
+$second-color: #0265ac;
+$third-color:  #004679;
+
+$font-size: 12px;
+$font-size-large: 1.5em;
+
+
+// Derived Colors
+$primary: $accent-color;
+$primary-light: lighten($accent-color, 10%);
+$secondary: $ash-gray;
+$secondary-light: lighten($ash-gray, 10%);
+$background-primary: $platinum;
+$background-secondary: $white-smoke;
+$text-primary: $onyx;
+$text-secondary: $platinum;
+$alert: $accent-color;
+$success: lighten($accent-color, 20%);
+$error: darken($accent-color, 20%);
+
+
+$gradient-navbar: linear-gradient(to left, $primary, $second-color);
+$gradient-header: linear-gradient(0deg,  $onyx, $ash-gray);
+

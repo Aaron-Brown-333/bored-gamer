@@ -37,6 +37,8 @@ function AutoFormatGroupCode({value, onValueChange } :
       onChange={handleChange}
       onKeyDown={handleKeyDown}
       maxLength={7}
+      size={14}
+      width='10px'
       placeholder='xxx-xxx'
     />
   );

@@ -6,6 +6,8 @@ import Index from './Home/Index';
 import Lobby from './Home/Lobby';
 import AuthenticatedLayout from './Layouts/AuthenticatedLayout';
 
+import './App.scss';
+
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -36,7 +38,7 @@ const ProtectedRoute = () => (
   <AuthenticatedLayout>
     <Routes>
       <Route path="/" element={<Index />} />
-      <Route path="/Lobby/:RoomCode" element={<Lobby />} />
+      <Route path="/Lobby/:GroupCode" element={<Lobby />} />
     </Routes>
   </AuthenticatedLayout>
 );

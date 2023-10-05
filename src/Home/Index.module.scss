@@ -1,6 +1,4 @@
-// LandingPage.module.scss
-
-
+@import '../Constants.scss';
 
 .landingPage {
   text-align: center;
@@ -104,19 +102,18 @@
   }
 
   .createButton {
-    background-color: #4CAF50;
-    color: white;
-    padding: 20px;
+    font-size: 8em;
+    line-height: 0em;
     border: none;
-    border-radius: 12px;
-    font-size: 48px;
+    background: none;
+    color: $text-primary;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: color 0.3s ease;
     width: 60px; // Adjust as per your design
     height: 60px; // Adjust as per your design
 
     &:hover {
-      background-color: #45a049;
+      color: $primary;
     }
   }
 

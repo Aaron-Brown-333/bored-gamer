@@ -1,19 +1,16 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway);
+@import "../Constants.scss";
 
-* {
-  font-family: "Raleway";
-  box-sizing: border-box;
-}
+
 
 .top-nav {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background-color: #00BAF0;
-  background: linear-gradient(to left, #f46b45, #eea849);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  color: #FFF;
+  background-color: $primary; // Using your primary color
+  background: $gradient-navbar; // Using primary and secondary colors
+  color: $text-primary; // Using your primary text color
   height: 50px;
   padding: 1em;
 }
@@ -61,7 +58,7 @@
 .menu-button::before,
 .menu-button::after {
   display: block;
-  background-color: #fff;
+  background-color: $text-primary; // Using your primary text color
   position: absolute;
   height: 4px;
   width: 30px;
@@ -106,6 +103,7 @@
     width: 100%;
     justify-content: center;
     align-items: center;
+    z-index: 11;
   }
   .menuToggle ~ .menu li {
     height: 0;
@@ -115,7 +113,7 @@
     transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
   }
   .menuToggle:checked ~ .menu li {
-    border: 1px solid #333;
+    border: 1px solid $text-primary; // Using your primary text color
     height: 2.5em;
     padding: 0.5em;
     transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
@@ -126,10 +124,10 @@
     margin: 0;
     padding: 0.5em 0;
     width: 100%;
-    color: white;
-    background-color: #222;
+    color: $text-secondary; // Using your secondary text color
+    background-color: $background-secondary; // Using your secondary background color
   }
   .menu > li:not(:last-child) {
-    border-bottom: 1px solid #444;
+    border-bottom: 1px solid lighten($background-secondary, 10%); // Lightening your secondary background color for the border
   }
 }

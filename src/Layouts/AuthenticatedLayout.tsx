@@ -11,10 +11,15 @@ const AuthenticatedLayout: React.FC<PropsWithChildren<{}>> = ({ children }) => {
         auth.signOut();
     };
 
+    const leaveGroup = () => {
+        localStorage.removeItem('groupCode');
+        window.location.href = '/';
+    };
+
     const leaveRoom = (
-        <Link to="/lobby" className={styles.link}>
-            Leave Room
-        </Link>
+        <button onClick={leaveGroup} className='actionButton warning'>
+            Leave Group
+        </button>
     );
 
     return (
@@ -29,9 +34,7 @@ const AuthenticatedLayout: React.FC<PropsWithChildren<{}>> = ({ children }) => {
                 </label>
                 <ul className={styles.menu}>
                     <li>{leaveRoom}</li>
-                    <li><button onClick={handleLogout}>Logout</button></li>
-                    <li>Three</li>
-                    <li>Four</li>
+                    <li><button onClick={handleLogout} className='actionButton error'>Logout</button></li>
                     <li>
                         {user && (
                             <div className={styles.userInfo}>

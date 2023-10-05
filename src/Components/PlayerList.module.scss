@@ -1,0 +1,25 @@
+@import '../Constants.scss';
+
+.playerRow {
+    display: flex;
+    align-items: center;
+    background-color: $background-primary;
+    padding: 0.5em 0em 0.5em 0.5em;
+    border-top-left-radius: 5em;
+    border-bottom-left-radius: 5em;
+    border: 2px solid $text-primary;
+    margin: 0.5em;
+    width: fit-content;
+}
+
+.playerRow:hover {
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+    transform: translate(-3px, -3px);
+}
+
+.playerName {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: $text-primary;
+    border-bottom: $third-color 3px solid;
+}
